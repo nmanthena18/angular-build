@@ -18,10 +18,11 @@ jobs:
       env:
         DOCKER_USER: ${{secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD }}
+        TAG_NAME: $(date +%s)
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag angular:$(date +%s)
+      run: docker build . --file Dockerfile --tag angular:$TAG_NAME
       
     - name: Docker Push
-      run: docker push angular
+      run: docker push angular:$TAG_NAME
