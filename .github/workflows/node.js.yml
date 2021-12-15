@@ -23,7 +23,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       -
         name: Build and push
-        id: nmanthena/angular
+        id: angular
         uses: docker/build-push-action@v2
         with:
           push: true
