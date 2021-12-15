@@ -22,7 +22,7 @@ jobs:
       run: |
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag angular:$TAG_NAME
+      run: docker build . --file Dockerfile --tag angular:v1
       
     - name: Docker Push
-      run: docker push angular:$TAG_NAME
+      run: docker push angular:v1
