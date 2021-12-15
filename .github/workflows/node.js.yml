@@ -42,4 +42,4 @@ jobs:
 #           context: .
 #           file: ./Dockerfile
 #           push: true
-#           tags: ${{ secrets.DOCKER_USERNAME }}/${{ env.ANGULAR_IMAGE_NAME }}:${{ github.sha }}
+#           tags: ${{ secrets.DOCKER_USERNAME }}/angular:${{ github.sha }}
