@@ -12,8 +12,7 @@ jobs:
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
-      -
-        run: echo "${{ env.hash }}"
+
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
@@ -26,6 +25,9 @@ jobs:
       -
         name: Build and push
         uses: docker/build-push-action@v2
+      -
+        run: echo "${{ env.hash }}"
+      -
         with:
           push: true
           tags: nmanthena/angular:latest
