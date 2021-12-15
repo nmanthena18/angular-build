@@ -5,8 +5,7 @@ on:
     branches:
       - 'master'
 # Environment variables available to all jobs and steps in this workflow
-env:
-  IMAGE_TAG: $(date +%s)
+
   
 jobs:
   docker:
@@ -28,6 +27,8 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       -
         name: Build and push
+        env:
+          IMAGE_TAG: $(date +%s)
         id: nmanthena/angular:${{ env.IMAGE_TAG }}
         uses: docker/build-push-action@v2
         with:
