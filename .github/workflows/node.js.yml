@@ -6,7 +6,7 @@ on:
       - 'master'
 # Environment variables available to all jobs and steps in this workflow
 env:
-  IMAGE_TAG: $( date +%s )
+  IMAGE_TAG: $(date +%s)
   
 jobs:
   docker:
