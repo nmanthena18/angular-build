@@ -40,7 +40,7 @@ jobs:
 #           password: ${{ secrets.DOCKER_PASSWORD }}
           
 #       - name: Build and push Angular Image
-#         id: nmanthena/angular:${{ github.sha }}
+#         id: nmanthena/angular:${GITHUB_SHA::7}
 #         uses: docker/build-push-action@v2
 #         with:
 #           context: .
