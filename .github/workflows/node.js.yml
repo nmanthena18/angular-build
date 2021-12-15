@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - 
-        run: echo ${env.IMAGE_TAG}
+        run: echo ${{env.IMAGE_TAG}}
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
