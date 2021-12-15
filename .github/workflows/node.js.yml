@@ -27,13 +27,11 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       -
         name: Build and push
-        env:
-          IMAGE_TAG: $(date +%s)
-        id: nmanthena/angular:${{ env.IMAGE_TAG }}
+        id: nmanthena/angular:new
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: nmanthena/angular:${{ env.IMAGE_TAG }}
+          tags: nmanthena/angular:new
         
     
 #       - name: Login to Docker Hub
